@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    {% with messages = get_flashed_messages() %}
+    <!-- declare a variable called messages -->
+    {% if messages %}
+    <!-- check if there are any messages -->
+    {% for message in messages %}
+    <!-- loop through the messages -->
+    <p>{{message}}</p> <!-- display each message in a paragraph tag -->
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <div class="container">
+        <div class="d-flex justify-content-between p-3" style="margin: auto;">
+<!-- Register HTML starts HERE -->
+            <div class="card" style="background-color: #343a40;">
+                <div class="card-header" style="color: lightskyblue;">
+                    <strong>
+                        <h2>Register</h2>
+                    </strong>
+                </div>
+                <div class="card-body" style="color: white;">
+                    <form action='/users/register' method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">First Name:</label>
+                            <input type='text' name='first_name'>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Last Name:</label>
+                            <input type='text' name='last_name'>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email:</label>
+                            <input type='email' name='email'>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password:</label>
+                            <input type='password' name='password'>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password:</label>
+                            <input type='password' name='confirm_password'>
+                        </div>
+                        <input class="btn btn-primary btn-sm" type="submit" value = "Submit">
+                    </form>
+                </div>
+            </div>
+<!-- Register HTML ends HERE -->
+
+<!-- Login HTML starts HERE -->
+            <div class="card" style="background-color: #343a40;">
+                <div class="card-header" style="color: lightskyblue;">
+                    <strong>
+                        <h2>Login</h2>
+                    </strong>
+                </div>
+                <div class="card-body" style="color: white;">
+                    <form action="/users/login" method="POST">
+                        <div class="mb-3">
+                            <label class="form-label">Email: </label>
+                            <input type="email" name="email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password: </label>
+                            <input type="password" name="password">
+                        </div>
+                        <input class="btn btn-primary btn-sm" type="submit" value = "Submit">
+                    </form>
+                </div>
+            </div>
+<!-- Login HTML ends HERE -->
+        </div>
+    </div>
+</body>
+
+</html>

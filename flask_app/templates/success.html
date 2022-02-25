@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Success!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card-header p-3 bg-dark" style="color: lightseagreen">
+            <strong>
+                <h1>You are now Successfully Logged In!</h1>
+                <p>Welcome to Coding Dojo, <span style="color: aliceblue;">{{session['user_email']}}</span></p>
+            </strong>
+            <div class="card-body">
+                <form action="/users/logout">
+                    <input class="btn btn-primary" type = "submit" value = "Logout">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
